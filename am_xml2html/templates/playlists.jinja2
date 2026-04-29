@@ -14,7 +14,7 @@
                     </span>
                 </div>
 
-                {% with tracks=playlist.tracks, show_artist=True %}
+                {% with tracks=playlist.tracks, show_artist=True, show_album=True %}
                     {% include 'tracks.jinja2' %}
                 {% endwith %}
             </div>

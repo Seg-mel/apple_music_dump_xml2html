@@ -47,6 +47,7 @@ class Xml2HtmlConverter:
             track_num = None
             track_id = None
             track_total_time_msecs = None
+            track_year = None
             year = None
             genre = None
 
@@ -69,8 +70,10 @@ class Xml2HtmlConverter:
                     album_name = track_line.text
                 elif key_track_line.text == 'Total Time':
                     track_total_time_msecs = track_line.text
-                elif key_track_line.text == 'Year' and not year:
-                    year = track_line.text
+                elif key_track_line.text == 'Year':
+                    track_year = track_line.text
+                    if not year:
+                        year = track_line.text
                 elif key_track_line.text == 'Genre' and not genre:
                     genre = track_line.text
 
@@ -88,6 +91,7 @@ class Xml2HtmlConverter:
                 name=track_name,
                 number=int(track_num),
                 total_time=int(int(track_total_time_msecs) / 1000) if track_total_time_msecs else None,
+                year=track_year,
             )
 
             tracks = album_data.get('tracks') or []
@@ -144,8 +148,8 @@ class Xml2HtmlConverter:
                 continue
 
             self._tracks_data_by_playlists[playlist_name] = dict(
-                name=playlist_name,
                 id=playlist_id,
+                name=playlist_name,
                 tracks=[self._tracks_data_by_ids.get(track_id, {}) for track_id in track_ids],
             )
 

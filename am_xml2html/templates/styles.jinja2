@@ -1,4 +1,31 @@
 <style>
+    :root {
+        /* Default colors */
+        --color-blue: #439acb;
+        --color-grey-blueish: rgb(162, 178, 187);
+        --color-grey-dark: #2c2c2c;
+        --color-grey-light: #d3d3d3;
+        --color-grey: #b4b4b4;
+        --color-orange: orange;
+        --color-violet: rgb(180, 143, 189);
+        --color-white-almost: rgb(209, 209, 209);
+        /* Element colors */
+        --color-album: var(--color-violet);
+        --color-bg: var(--color-grey-dark);
+        --color-collapse-btn: var(--color-grey-light);
+        --color-collapsible-icon: var(--color-grey-light);
+        --color-dump-date: var(--color-grey);
+        --color-h1: var(--color-grey-light);
+        --color-line: var(--color-grey-light);
+        --color-main-item: var(--color-blue);
+        --color-name-info: var(--color-grey);
+        --color-section-title: var(--color-grey-light);
+        --color-track-artist-part: var(--color-white-almost);
+        --color-track-name-part: var(--color-grey-light);
+        --color-track-name: var(--color-grey-light);
+        --color-warn: var(--color-orange);
+    }
+
     @font-face {
         font-family: 'Roboto';
         src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300,400;500;600&display=swap');
@@ -12,7 +39,7 @@
     }
 
     body {
-        background-color: #2c2c2c;
+        background-color: var(--color-bg);
         font-family: 'Roboto', sans-serif;
         padding: 20px;
     }
@@ -20,34 +47,35 @@
     hr {
         margin-top: 20px;
         margin-bottom: 20px;
+        height: 1px;
+        background-color: var(--color-line);
+        border: none;
     }
 
     h1 {
         display: flex;
         flex-direction: column;
-        {#margin-bottom: 40px;#}
-        color: #d3d3d3;
+        color: var(--color-h1);
         font-weight: 400;
     }
 
     h1 .h1-small {
         font-size: 14px;
         font-weight: 400;
-        color: #b4b4b4;
+        color: var(--color-dump-date);
     }
 
     .collapse-buttons {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        {#margin-bottom: 40px;#}
     }
     .collapse-buttons .buttons-line {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 5px;
-        color: #d3d3d3;
+        color: var(--color-collapse-btn);
     }
     .collapse-buttons .buttons-line .btn {
         border: none;
@@ -55,20 +83,20 @@
         margin: 0;
         background: none;
         cursor: pointer;
-        color: #d3d3d3;
+        color: var(--color-collapse-btn);
     }
     .collapse-buttons .buttons-line .btn:hover {
         text-decoration: underline;
     }
     .collapse-buttons .info-line {
         font-size: 10px;
-        color: orange;
+        color: var(--color-warn);
     }
 
     .name-info {
         font-size: 10px;
         font-weight: 300;
-        color: #b4b4b4;
+        color: var(--color-name-info);
     }
 
     section {
@@ -83,24 +111,21 @@
         margin-bottom: 6px;
         font-size: 16px;
         font-weight: 500;
-        color: #d3d3d3;
+        color: var(--color-section-title);
     }
-
     section .section-list {
         flex-direction: column;
         padding-left: 20px;
     }
-
     section.open .section-list {
         display: flex;
     }
-
     section .section-list .main-item .main-item-name {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 5px;
-        color: #439acb;
+        color: var(--color-main-item);
         font-size: 13px;
         font-weight: 600;
         line-height: 1.5;
@@ -109,7 +134,6 @@
         font-size: 10px;
         font-family: monospace;
         font-weight: 400;
-        color: #d3d3d3;
     }
 
     section .album-list {
@@ -122,7 +146,7 @@
         gap: 4px;
         font-size: 12px;
         font-weight: 600;
-        color: rgb(180, 143, 189);
+        color: var(--color-album);
         line-height: 1.5;
     }
 
@@ -139,9 +163,9 @@
         flex-direction: row;
         align-items: center;
         gap: 4px;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 400;
-        color: white;
+        color: var(--color-track-name);
         line-height: 1.5;
     }
     section .track-list .track .track-name .track-number-part {
@@ -149,10 +173,10 @@
         font-weight: 600;
     }
     section .track-list .track .track-name .track-artist-part {
-        color: rgb(209, 209, 209);
+        color: var(--color-track-artist-part);
     }
     section .track-list .track .track-name .track-name-part {
-        color: rgb(162, 178, 187);
+        color: var(--color-track-name-part);
     }
 
     .unselectable {
@@ -167,20 +191,17 @@
     .collapsible > .collapsible-title:hover .collapsible-title-main {
         text-decoration: underline;
     }
-
     .collapsible > .collapsible-title::before {
         content: '[+]';
         font-size: 10px;
         font-family: monospace;
         font-weight: 400;
-        color: #d3d3d3;
+        color: var(--color-collapsible-icon);
     }
-
     .collapsible.open > .collapsible-title::before {
         content: '[-]';
         font-family: monospace;
     }
-
     .collapsible > .collapsible-list {
         display: none;
         flex-direction: column;

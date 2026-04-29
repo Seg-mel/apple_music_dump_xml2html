@@ -9,7 +9,7 @@
             <div class="main-item collapsible artist">
                 <div class="main-item-name collapsible-title artist-name">
                     <span class="collapsible-title-main">{{ artist_name }}</span>
-                    <span class="name-info artist-name-info unselectable">
+                    <span class="name-info artist-name-info">
                         [{{ albums|length }} album{{ albums|length|pluralize }}]
                     </span>
                 </div>
@@ -19,8 +19,8 @@
                         <div class="collapsible album">
                             <div class="collapsible-title album-name">
                                 <span class="collapsible-title-main">{{ album_name }}</span>
-                                <span class="name-info unselectable">
-                                    [{{ album.year }}, {{ album.tracks|length }} track{{ album.tracks|length|pluralize }}{% if album.genre %}, {{ album.genre }}{% endif %}]
+                                <span class="name-info">
+                                    [{{ album.tracks|length }} track{{ album.tracks|length|pluralize }} | {{ album.year }}{% if album.genre %} | {{ album.genre }}{% endif %}]
                                 </span>
                             </div>
 

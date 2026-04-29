@@ -12,8 +12,8 @@
                 <span class="track-name-part">{{ track.name }}</span>
 
                 {% if track.total_time %}
-                    <span class="name-info unselectable">
-                        [{{ track.total_time|seconds_to_mm_ss }}]
+                    <span class="name-info">
+                        [{{ track.total_time|seconds_to_mm_ss }}{% if show_album %} | {{ track.album }} ({{ track.year }}){% endif %}]
                     </span>
                 {% endif %}
             </div>
