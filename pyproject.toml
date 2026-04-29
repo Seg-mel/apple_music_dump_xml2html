@@ -1,0 +1,8 @@
+[project]
+name = "apple-music-dump-xml2html"
+version = "0.1.0"
+description = "Convert XML dump of Apple Music library to pretty HTML"
+requires-python = ">=3.13"
+dependencies = [
+    "jinja2>=3.1.6",
+]

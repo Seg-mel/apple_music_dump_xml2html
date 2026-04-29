@@ -1,0 +1,38 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const collapsibleBlocks = document.getElementsByClassName('collapsible');
+
+    for (const collapsibleBlock of collapsibleBlocks) {
+      const collapsibleTitle = collapsibleBlock.querySelector('.collapsible-title');
+
+      collapsibleTitle.addEventListener('click', () => {
+        if (collapsibleBlock.classList.contains('open')) {
+          collapsibleBlock.classList.remove('open');
+        } else {
+          collapsibleBlock.classList.add('open');
+        }
+      });
+    }
+
+    const buttonOpen = document.querySelector('.collapse-buttons .btn-open');
+    const buttonClose = document.querySelector('.collapse-buttons .btn-close');
+
+    buttonOpen.addEventListener('click', () => {
+      console.log('Open');
+      const collapsibleBlocks = document.getElementsByClassName('collapsible');
+
+      for (const collapsibleBlock of collapsibleBlocks) {
+        collapsibleBlock.classList.add('open');
+      }
+    });
+
+    buttonClose.addEventListener('click', () => {
+      console.log('Close');
+      const collapsibleBlocks = document.getElementsByClassName('collapsible');
+
+      for (const collapsibleBlock of collapsibleBlocks) {
+        collapsibleBlock.classList.remove('open');
+      }
+    });
+  });
+</script>

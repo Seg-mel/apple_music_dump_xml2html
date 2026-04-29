@@ -1,0 +1,77 @@
+# -------- env settings ---------
+
+
+# Docker volumes
+docker/volumes
+
+
+# -------- local env ---------
+
+
+# Code editors
+.idea
+*.iml
+.vscode
+
+# MacOS
+.DS_Store
+*.app
+
+# Windows
+Thumbs.db
+*~
+
+# Local History for VS Code
+.history/
+
+
+# -------- code runs ---------
+
+
+# Generated dirs
+__pycache__
+tmp
+.ruff_cache
+.venv
+.virtualenv
+venv
+virtualenv
+
+# Compiled Python bytecode
+*.py[cod]
+*.pyo
+*.pyc
+*.mo
+
+# Output files
+logs
+dumps
+
+# Unittest reports
+.pytest_cache
+TEST*.xml
+.coverage
+htmlcov
+tests_coverage
+
+
+# -------- etc ---------
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# Tmp dirs and files
+*.tmp
+tmp.*
+*.bkp
+*.bkp.*
+
+# Local files
+*.local*
+local.*
+**/local__*

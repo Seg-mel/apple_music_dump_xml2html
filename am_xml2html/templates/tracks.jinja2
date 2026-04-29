@@ -1,0 +1,23 @@
+<div class="collapsible-list track-list ">
+    {% for track in tracks %}
+        <div class="track">
+            <div class="track-name">
+                <span class="track-number-part unselectable">{{ loop.index }}.</span>
+
+                {% if show_artist %}
+                    <span class="track-artist-part">{{ track.artist }}</span>
+                    &ndash;
+                {% endif %}
+
+                <span class="track-name-part">{{ track.name }}</span>
+
+                {% if track.total_time %}
+                    <span class="name-info unselectable">
+                        [{{ track.total_time|seconds_to_mm_ss }}]
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

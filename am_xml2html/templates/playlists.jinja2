@@ -1,0 +1,23 @@
+<section class="section collapsible playlists">
+    <div class="section-title collapsible-title playlists-title">
+        <span class="collapsible-title-main">Playlists</span>
+        <span class="name-info">[{{ playlists|length }}]</span>
+    </div>
+
+    <div class="section-list collapsible-list playlists-list">
+        {% for playlist in playlists.values() %}
+            <div class="main-item collapsible playllist">
+                <div class="main-item-name collapsible-title playlist-name">
+                    <span class="collapsible-title-main">{{ playlist.name }}</span>
+                    <span class="name-info playlist-name-info">
+                        [{{ playlist.tracks|length }} track{{ playlist.tracks|length|pluralize }}]
+                    </span>
+                </div>
+
+                {% with tracks=playlist.tracks, show_artist=True %}
+                    {% include 'tracks.jinja2' %}
+                {% endwith %}
+            </div>
+        {% endfor %}
+    </div>
+</section>

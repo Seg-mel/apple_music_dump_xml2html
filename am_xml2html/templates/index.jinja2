@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Apple Music Dump [{{ info.created_at.strftime('%Y.%m.%d %H:%M:%S') }}]</title>
+        {% include 'styles.jinja2' %}
+        {% include 'script.jinja2' %}
+    </head>
+
+    <body>
+        <h1>
+            Apple Music Dump
+            <span class="h1-small">
+                dumped at {{ info.created_at.strftime('%Y.%m.%d %H:%M:%S') }}<br />
+                generated at {{ info.generated_at.strftime('%Y.%m.%d %H:%M:%S') }}
+            </span>
+        </h1>
+
+        <hr />
+
+        <div class="collapse-buttons">
+            <div class="buttons-line">
+                <button class="btn btn-open" type="button">Open all</button>
+                /
+                <button class="btn btn-close" type="button">Close all</button>
+            </div>
+
+            <div class="info-line">
+                If you have a huge library openning/closing can take some time.<br />
+                Do not press many times, just wait until it's done.
+            </div>
+        </div>
+
+        <hr />
+
+        {% include 'artists.jinja2' %}
+        {% include 'playlists.jinja2' %}
+    </body>
+</html>

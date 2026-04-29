@@ -1,0 +1,36 @@
+<section class="section collapsible artists">
+    <div class="section-title collapsible-title artists-title">
+        <span class="collapsible-title-main">Artists</span>
+        <span class="name-info">[{{ artists|length }}]</span>
+    </div>
+
+    <div class="section-list collapsible-list artists-list">
+        {% for artist_name, albums in artists.items() %}
+            <div class="main-item collapsible artist">
+                <div class="main-item-name collapsible-title artist-name">
+                    <span class="collapsible-title-main">{{ artist_name }}</span>
+                    <span class="name-info artist-name-info unselectable">
+                        [{{ albums|length }} album{{ albums|length|pluralize }}]
+                    </span>
+                </div>
+
+                <div class="collapsible-list album-list">
+                    {% for album_name, album in albums.items() %}
+                        <div class="collapsible album">
+                            <div class="collapsible-title album-name">
+                                <span class="collapsible-title-main">{{ album_name }}</span>
+                                <span class="name-info unselectable">
+                                    [{{ album.year }}, {{ album.tracks|length }} track{{ album.tracks|length|pluralize }}{% if album.genre %}, {{ album.genre }}{% endif %}]
+                                </span>
+                            </div>
+
+                            {% with tracks=album.tracks, show_artist=False %}
+                                {% include 'tracks.jinja2' %}
+                            {% endwith %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
