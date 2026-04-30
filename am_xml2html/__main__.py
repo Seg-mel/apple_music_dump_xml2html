@@ -1,11 +1,11 @@
+import argparse
 import sys
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(BASE_DIR))
 
-import argparse
-from am_xml2html.converter import Xml2HtmlConverter
+from am_xml2html.converter import Xml2HtmlConverter  # noqa: E402
 
 
 def _main(xml_path: str, html_path: str) -> None:

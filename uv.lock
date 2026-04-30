@@ -4,14 +4,18 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "apple-music-dump-xml2html"
-version = "0.1.0"
+version = "1"
 source = { virtual = "." }
-dependencies = [
+
+[package.dev-dependencies]
+main = [
     { name = "jinja2" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "jinja2", specifier = ">=3.1.6" }]
+
+[package.metadata.requires-dev]
+main = [{ name = "jinja2", specifier = ">=3.1.6" }]
 
 [[package]]
 name = "jinja2"

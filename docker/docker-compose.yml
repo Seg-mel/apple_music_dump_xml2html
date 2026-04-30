@@ -1,0 +1,23 @@
+name: am_xml2html
+
+services:
+  am_xml2html:
+    container_name: am_xml2html
+    build:
+      context: ..
+      dockerfile: docker/dockerfiles/Dockerfile
+    volumes:
+      - ..:/home/amx2h_user/project
+    profiles:
+      - donotstart
+    command: /bin/sh -c "python am_xml2html -i $$INPUT -o $$OUTPUT"
+
+  amx2h_ruff:
+    image: ghcr.io/astral-sh/ruff:0.15.12-alpine
+    container_name: amx2h_ruff
+    volumes:
+      - ..:/home/amx2h_user/project
+    profiles:
+      - donotstart
+    working_dir: /home/amx2h_user/project/am_xml2html
+    command: /bin/sh -c "ruff format . && ruff check --fix ."
