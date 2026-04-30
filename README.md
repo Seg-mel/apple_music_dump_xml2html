@@ -33,6 +33,10 @@ This is the preferralble way as you don't need to care about the Python environm
     ```shell
     make convert-docker i=<path_to_your_dump>/Library.xml o=<path_to_output_html>/Library.html
     ```
+    or
+    ```shell
+    docker compose -f docker/docker-compose.yml run --rm -e INPUT=<path_to_your_dump>/Library.xml -e OUTPUT=<path_to_output_html>/Library.html am_xml2html
+    ```
 5. Open the resulting file in your browser
 
 That's all!
@@ -48,9 +52,11 @@ If you want to make it in a raw way, here the instruction
 
 1. (optional) Install [Python](https://www.python.org/downloads/)
 2. Install UV `pip install uv`
-3. Create venv `uv sync --all-groups`
-4. Activate venv `source .venv/bin/activate`
-5. Run command
+3. Clone this repo
+4. Go to the cloned directory
+5. Create venv `uv sync --all-groups`
+6. Activate venv `source .venv/bin/activate`
+7. Run command
     ```shell
     make convert i=<path_to_your_dump>/Library.xml o=<path_to_output_html>/Library.html 
     ```
