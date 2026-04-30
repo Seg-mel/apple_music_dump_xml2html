@@ -1,4 +1,4 @@
-## Apple Music Dump converter from XML to HTML
+# Apple Music Dump converter from XML to HTML
 
 If you want to see your music library from Apple Music on a pretty compact human-readable HTML page,
 this is what you need.
@@ -12,16 +12,16 @@ This is not a site, just a single file without any interactive stuff, except col
 I decided to write it in case of streaming death or bloking it. 
 The main purpose is to have the ability to restore my library offline.
 
-### Usage
+## Usage
 
 Here are several steps to make it work
 
-#### Apple Music library dump
+### Apple Music library dump
 
 Please export your full Apple Music library from your Mac (yes, only macOS client can do that).
 The official docs of how to do this: https://support.apple.com/en-gb/guide/music/mus27cd5060f/mac.
 
-#### Run the util with Docker
+### Run the util with Docker
 
 This is the preferralble way as you don't need to care about the Python environment.
 
@@ -40,7 +40,7 @@ If you want to clean up after this util, just run the command
 make rm-all
 ```
 
-#### Run with your local system python
+### Run with your local system python
 
 If you want to make it in a raw way, here the instruction
 1. (optional) Install [Python](https://www.python.org/downloads/)
