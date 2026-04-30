@@ -4,6 +4,7 @@ If you want to see your music library from Apple Music on a pretty compact human
 this is what you need.
 
 This util generates an HTML file where you can see:
+
 1. Artists -> Albums -> Tracks
 2. Playlists -> Tracks
 
@@ -33,6 +34,7 @@ This is the preferralble way as you don't need to care about the Python environm
     make convert-docker i=<path_to_your_dump>/Library.xml o=<path_to_output_html>/Library.html
     ```
 5. Open the resulting file in your browser
+
 That's all!
 
 If you want to clean up after this util, just run the command
@@ -43,6 +45,7 @@ make rm-all
 ### Run with your local system python
 
 If you want to make it in a raw way, here the instruction
+
 1. (optional) Install [Python](https://www.python.org/downloads/)
 2. Install UV `pip install uv`
 3. Create venv `uv sync --all-groups`
@@ -52,9 +55,11 @@ If you want to make it in a raw way, here the instruction
     python am_xml2html -i <path_to_your_dump>/Library.xml -o <path_to_output_html>/Library.html
     ```
 6. Open the resulting file in your browser
+
 Congrats again!
 
 To clean up:
+
 1. Remove repo with venv inside it
 2. Remove installed Python (if you did that)
 
