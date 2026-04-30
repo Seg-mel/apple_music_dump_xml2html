@@ -52,6 +52,10 @@ If you want to make it in a raw way, here the instruction
 4. Activate venv `source .venv/bin/activate`
 5. Run command
     ```shell
+    make convert i=<path_to_your_dump>/Library.xml o=<path_to_output_html>/Library.html 
+    ```
+    or
+    ```shell
     python am_xml2html -i <path_to_your_dump>/Library.xml -o <path_to_output_html>/Library.html
     ```
 6. Open the resulting file in your browser
